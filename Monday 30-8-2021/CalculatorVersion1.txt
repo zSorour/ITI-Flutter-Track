@@ -1,0 +1,90 @@
+import 'dart:io';
+
+class Calculator {
+  double num1;
+  double num2;
+  String operation;
+
+  //Set data from user input
+  void setData() {
+    print('\nPlease enter the first number:');
+    num1 = double.parse(stdin.readLineSync());
+    print('Please enter the second number:');
+    num2 = double.parse(stdin.readLineSync());
+    bool accepted = false;
+    do {
+      print('Please enter the operator you wish to use (+ or - or * or /):');
+      operation = stdin.readLineSync();
+      if (operation == '+' ||
+          operation == '-' ||
+          operation == '*' ||
+          operation == '/') {
+        accepted = true;
+      } else {
+        print('Operator mismatch...');
+      }
+    } while (!accepted);
+  }
+
+  //Print two numbers and the operator
+  void showData() {
+    String op = '';
+    if (operation == '+') {
+      op = 'Addition';
+    } else if (operation == '-') {
+      op = 'Subtraction';
+    } else if (operation == '*') {
+      op = 'Multiplication';
+    } else if (operation == '/') {
+      op = 'Division';
+    }
+    print(
+        'The first number is $num1, the second number is $num2, and the operation is $op');
+  }
+
+  //Return calculation
+  double calculate() {
+    if (operation == '+') {
+      return num1 + num2;
+    } else if (operation == '-') {
+      return num1 - num2;
+    } else if (operation == '*') {
+      return num1 * num2;
+    } else if (operation == '/') {
+      if (num2 != 0) {
+        return num1 / num2;
+      }
+      print("ERROR, NEVER DIVIDE BY ZERO!!!");
+      return 0;
+    }
+  }
+}
+
+main() {
+  // List<Calculator> calculators = [];
+  // for (int i = 0; i < 4; i++) {
+  //   calculators.add(new Calculator());
+  //   calculators[i].setData();
+  //   calculators[i].showData();
+  //   print('The result is ${calculators[i].calculate()}');
+  // }
+  Calculator c1 = new Calculator();
+  c1.setData();
+  c1.showData();
+  print('The result is ${c1.calculate()}');
+
+  Calculator c2 = new Calculator();
+  c2.setData();
+  c2.showData();
+  print('The result is ${c2.calculate()}');
+
+  Calculator c3 = new Calculator();
+  c3.setData();
+  c3.showData();
+  print('The result is ${c3.calculate()}');
+
+  Calculator c4 = new Calculator();
+  c4.setData();
+  c4.showData();
+  print('The result is ${c4.calculate()}');
+}
