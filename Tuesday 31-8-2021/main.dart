@@ -13,9 +13,9 @@ class MyFirstClass extends StatelessWidget {
         drawer: Drawer(
           child: Column(
             children: [
-              Text('File'),
-              Text('File'),
-              Text('File'),
+              Text('Menu 1'),
+              Text('Menu 2'),
+              Text('Menu 3'),
             ],
           ),
         ),
@@ -42,14 +42,63 @@ class MyFirstClass extends StatelessWidget {
           ),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(''),
-            Text(' Ringing...'),
-            Text(' Ringing...'),
-            Text(' Ringing...'),
-            Text(' Ringing...'),
-            Text(' Ringing...'),
-            Text(' Ringing...'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('This is a button using FlatButton   '),
+                FlatButton(
+                  onPressed: () {
+                    print('HELLOOOOO');
+                  },
+                  child: Text('Press Me'),
+                  color: Colors.amberAccent,
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                FlatButton(
+                  onPressed: () {
+                    print('HELLOOOOO');
+                  },
+                  child: Text('Press Me'),
+                  color: Colors.amberAccent,
+                ),
+                Text('   This is another button using FlatButton'),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('This is a button using RaisedButton   '),
+                RaisedButton(
+                  onPressed: () {
+                    print('HELLOOOOO');
+                  },
+                  child: Text('Press Me'),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                RaisedButton(
+                  onPressed: () {
+                    print('HELLOOOOO');
+                  },
+                  child: Text('Press Me'),
+                ),
+                Text('   This is another button using RaisedButton'),
+              ],
+            ),
           ],
         ),
       ),
