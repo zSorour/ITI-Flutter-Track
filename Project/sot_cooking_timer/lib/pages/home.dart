@@ -4,7 +4,7 @@ import 'package:sot_cooking_timer/pages/cookTimer.dart';
 import 'package:sot_cooking_timer/pages/infoTabPage.dart';
 
 List<FoodItem> foodItems = [
-  FoodItem('Fish', 'assets/img/fish.png', 10, 20, 30),
+  FoodItem('Fish', 'assets/img/fish.png', 30, 40, 120),
   FoodItem('Trophy Fish', 'assets/img/trophyFish.png', 80, 90, 180),
   FoodItem('Meat', 'assets/img/meat.png', 50, 60, 120),
   FoodItem('Kraken', 'assets/img/kraken.png', 100, 120, 240),
